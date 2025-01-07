@@ -71,7 +71,7 @@ function KeyRecordsCard({ data }: KeyRecordsTableProps) {
             </h1>
             {seperateRecords(getRecordByHow(row.label, data.etcgames)).map(
               (record) => (
-                <div className="flex gap-2 items-center">
+                <div className="flex gap-2 items-center" key={row.label}>
                   {row.label !== '심판' && record.length > 0
                     ? handlerPlayerImage(
                         record.substring(0, record.indexOf('('))

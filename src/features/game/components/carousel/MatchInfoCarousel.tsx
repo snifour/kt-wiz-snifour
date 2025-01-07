@@ -44,15 +44,11 @@ const MatchInfoCarousel = () => {
   }, [recentMonth, currentMonth]);
 
   // 경기 일정 데이터
-  const { matchData, isLoading } = useGetMatchScheduleQuery({
+  const { matchData } = useGetMatchScheduleQuery({
     currentMonth: parse(queryMonth, 'yyyyMM', new Date()), // `queryMonth`를 `Date`로 변환
     carouselApi,
     type,
   });
-
-  if (isLoading) {
-    console.log(isLoading);
-  }
 
   /** 날짜 선택 시 캐러셀 이동 */
   useEffect(() => {
